@@ -10,10 +10,9 @@ dotenv.config();
 
 //Connect to DB
 mongoose.connect(
-    process.env.DB_CONNECT,
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    () => console.log('connect to DB')
-);
+    process.env.DB_CONNECTION,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+).then(console.log('connect to db'));
 
 //middleware
 app.use(express.json());
